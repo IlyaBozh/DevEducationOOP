@@ -6,47 +6,35 @@ using System.Threading.Tasks;
 
 namespace DevEducationOOP
 {
-    internal class Homework1
+    internal class Variables
     {
-/*        public static int[] DivideNumbersWithRemainder(int divisible, int divisor)
+        public static void DivideNumbersWithRemainder(double divisible, double divisor, out double divisionResult, out double remainder)
         {
-            int[] result = new int[2];
 
             if (divisor == 0)
             {
-                Console.WriteLine("Warning!!! Division by 0");
+                throw new Exception("The user entered a divisor equal to 0");
             }
 
-            else
-            {
-                Console.WriteLine($"Division result: {divisible / divisor}");
-                Console.WriteLine($"The remainder of the division: {divisible % divisor}");
-            }
-        }*/
+            divisionResult = divisible / divisor;
+            remainder = divisible % divisor;
+        }
 
-/*        public static double SolveExpression(double number1, double number2)
+        public static double SolveExpression(double number1, double number2)
         {
             if (number1 == number2)
             {
-                Console.WriteLine("Warning!!! Division by 0");
+                throw new Exception("Division by 0. The user entered two identical numbers, the difference of which gives 0");
             }
-            else
-            {
-                int result = (int)(5 * number1 + Math.Pow(number2, 2)) / (number2 - number1);
-                Console.Write("Calculation result:");
-                Console.WriteLine($"(5 * {number1} + {number2}^2) / ({number2} - {number1}) = {result}");
-            }
-        }*/
 
-        public static string[] SwapLines(string str1, string str2)
+            return (5 * number1 + Math.Pow(number2, 2)) / (number2 - number1);
+        }
+
+        public static void SwapLines(ref string str1, ref string str2)
         {
-            string[] result = new string[2];
             string tmp = str1;
             str1 = str2;
             str2 = tmp;
-            result[0] = str1;
-            result[1] = str2;
-            return result;
         }
 
         public static double SolveLinearEquation(double firstTerm, double secondTerm, double thirdTerm)
@@ -57,20 +45,22 @@ namespace DevEducationOOP
         public static string FindEquationOfStraightLine(double x1, double x2, double y1, double y2)
         {
             string equationOfStraightLine;
+            double tmp1 = (y2 - y1) / (x2 - x1);
+            double tmp2 = -x1 * (y2 - y1) / (x2 - x1);
 
             if (-x1* (y2 - y1) / (x2 - x1) + y1 > 0)
             {
-                equationOfStraightLine = "y = " + (y2 - y1) / (x2 - x1) + "x + " + -x1 * (y2 - y1) / (x2 - x1) + " + " + y1;
+                equationOfStraightLine = "y = " + tmp1 + "x + " + -x1 * (y2 - y1) / (x2 - x1) + " + " + y1;
             }
 
             else if (-x1* (y2 - y1) / (x2 - x1) + y1< 0)
             {
-                equationOfStraightLine = "y = " + (y2 - y1) / (x2 - x1) + "x - " + -x1 * (y2 - y1) / (x2 - x1) + " + " + y1;
+                equationOfStraightLine = "y = " + tmp1 + "x - " + -x1 * (y2 - y1) / (x2 - x1) + " + " + y1;
             }
 
             else
             {
-                equationOfStraightLine = "y = " + (y2 - y1) / (x2 - x1) + "x";
+                equationOfStraightLine = "y = " + tmp1 + "x";
             }
 
             return equationOfStraightLine;

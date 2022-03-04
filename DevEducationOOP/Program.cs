@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using DevEducationOOP;
+string str1 = "dasfgw";
+string str2 = "dasfgwasfryhyrdyrsry";
+Variables.SwapLines(ref str1, ref str2);
+
+Console.WriteLine($"{str1}\n{str2}");
