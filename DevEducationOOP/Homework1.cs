@@ -47,15 +47,16 @@ namespace DevEducationOOP
             string equationOfStraightLine;
             double tmp1 = (y2 - y1) / (x2 - x1);
             double tmp2 = -x1 * (y2 - y1) / (x2 - x1);
+            double tmp3 = -x1 * (y2 - y1) / (x2 - x1) + y1;
 
-            if (-x1* (y2 - y1) / (x2 - x1) + y1 > 0)
+            if (tmp3 > 0)
             {
-                equationOfStraightLine = "y = " + tmp1 + "x + " + -x1 * (y2 - y1) / (x2 - x1) + " + " + y1;
+                equationOfStraightLine = "y = " + tmp1 + "x + " + tmp2 + " + " + y1;
             }
 
-            else if (-x1* (y2 - y1) / (x2 - x1) + y1< 0)
+            else if (tmp3 < 0)
             {
-                equationOfStraightLine = "y = " + tmp1 + "x - " + -x1 * (y2 - y1) / (x2 - x1) + " + " + y1;
+                equationOfStraightLine = "y = " + tmp1 + "x - " + tmp2 + " + " + y1;
             }
 
             else
