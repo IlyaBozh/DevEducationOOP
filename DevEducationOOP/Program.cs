@@ -1,6 +1,7 @@
 
 ﻿using DevEducationOOP;
-string res1 = Variables.FindEquationOfStraightLine(1, -4, 6, -4);
+string res1 = Conditions.TranslatNumberIntoWrittenForm(13);
+Console.WriteLine(res1);
 
-Console.WriteLine($"{res1}");
+
 
