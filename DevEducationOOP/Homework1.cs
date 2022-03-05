@@ -39,6 +39,11 @@ namespace DevEducationOOP
 
         public static double SolveLinearEquation(double firstTerm, double secondTerm, double thirdTerm)
         {
+            if (firstTerm == 0)
+            {
+                throw new Exception("The first term must not be equal to 0");
+            }
+
             return (thirdTerm - secondTerm) / firstTerm;
         }
 
