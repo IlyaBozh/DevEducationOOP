@@ -8,7 +8,7 @@ namespace DevEducationOOP
 {
     internal class Variables
     {
-        public static void DivideNumbersWithRemainder(double divisible, double divisor, out double divisionResult, out double remainder)
+        public static void DivideNumbersWithRemainder(int divisible, int divisor, out int divisionResult, out int remainder)
         {
 
             if (divisor == 0)
@@ -42,21 +42,25 @@ namespace DevEducationOOP
             return (thirdTerm - secondTerm) / firstTerm;
         }
 
-        public static string FindEquationOfStraightLine(double x1, double x2, double y1, double y2)
+        public static string FindEquationOfStraightLine(double x1, double y1, double x2, double y2)
         {
             string equationOfStraightLine;
             double tmp1 = (y2 - y1) / (x2 - x1);
-            double tmp2 = -x1 * (y2 - y1) / (x2 - x1);
-            double tmp3 = -x1 * (y2 - y1) / (x2 - x1) + y1;
+            double tmp2 = -x1 * (y2 - y1) / (x2 - x1) + y1;
 
-            if (tmp3 > 0)
+            if (tmp1 == 0)
             {
-                equationOfStraightLine = "y = " + tmp1 + "x + " + tmp2 + " + " + y1;
+                equationOfStraightLine = "y = " + tmp2;
             }
 
-            else if (tmp3 < 0)
+            else if (tmp2 > 0)
             {
-                equationOfStraightLine = "y = " + tmp1 + "x - " + tmp2 + " + " + y1;
+                equationOfStraightLine = "y = " + tmp1 + "x + " + tmp2;
+            }
+
+            else if (tmp2 < 0)
+            {
+                equationOfStraightLine = "y = " + tmp1 + "x - " + tmp2 * (-1);
             }
 
             else
