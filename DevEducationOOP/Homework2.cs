@@ -8,6 +8,12 @@ namespace DevEducationOOP
 {
     internal class Conditions
     {
+        /// <summary>
+        /// Returns the result of an arithmetic operation on numbers, which is selected based on the specified numbers
+        /// </summary>
+        /// <param name="number1"></param>
+        /// <param name="number2"></param>
+        /// <returns></returns>
         public static double PerformArithmeticOperationOnNumbers(double number1, double number2)
         {
             double result;
@@ -30,6 +36,12 @@ namespace DevEducationOOP
             return result;
         }
 
+        /// <summary>
+        /// Returns a message about the position of a point on the coordinate plane
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         public static string DeterminePositionOfPointOnCoordinatePlane(double x, double y)
         {
             string result;
@@ -72,6 +84,13 @@ namespace DevEducationOOP
             return result;
         }
 
+        /// <summary>
+        /// Returns a sorted array of three numbers
+        /// </summary>
+        /// <param name="number1"></param>
+        /// <param name="number2"></param>
+        /// <param name="number3"></param>
+        /// <returns></returns>
         public static double[] SortNumbers(double number1, double number2, double number3)
         {
             double[] sortNumbers = new double[3];
@@ -122,6 +141,15 @@ namespace DevEducationOOP
         }
 
         #region Methods for solving the quadratic equation
+
+        /// <summary>
+        /// Returns the roots of the quadratic equation
+        /// </summary>
+        /// <param name="firstCoefficient">firstCoefficient != 0</param>
+        /// <param name="secondCoefficient"></param>
+        /// <param name="freeTerm"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public static string SolveQuadraticEquation(double firstCoefficient, double secondCoefficient, double freeTerm)
         {
             double discriminant = FindDiscriminant(firstCoefficient, secondCoefficient, freeTerm);
@@ -175,6 +203,12 @@ namespace DevEducationOOP
         #endregion
 
         #region Methods for translating numbers into written form
+
+        /// <summary>
+        /// Returns the written form of a number from 10 to 99
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
         public static string TranslatNumberIntoWrittenForm(int number)
         {
             int dozen = number / 10;

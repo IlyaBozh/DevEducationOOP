@@ -8,6 +8,12 @@ namespace DevEducationOOP
 {
     internal class Cycles
     {
+        /// <summary>
+        /// Raises a number to a power
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="degreeNumber"></param>
+        /// <returns></returns>
         public static double RaiseNumberToPower(double number, double degreeNumber)
         {
             double result = 1;
@@ -25,6 +31,11 @@ namespace DevEducationOOP
             return result;
         }
 
+        /// <summary>
+        /// Returns a list of numbers from 1 to 1000, which are divisible without remainder by the passed number
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
         public static List<int> FindDivisibleNumbers(int number)
         {
             List<int> divisibleNumbers = new List<int>();
@@ -37,11 +48,13 @@ namespace DevEducationOOP
             return divisibleNumbers;
         }
 
-        // Task 3
-        static void FindSmallerSquaresOfNumbers()
+        /// <summary>
+        /// Returns the number of numbers whose root is less than the passed number
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static int FindSmallerSquaresOfNumbers(int number)
         {
-            Console.Write("Enter a number: ");
-            int number = Convert.ToInt32(Console.ReadLine());
             int countNumbers = 0;
 
             while (Math.Pow(countNumbers, 2) < number)
@@ -49,31 +62,34 @@ namespace DevEducationOOP
                 countNumbers++;
             }
 
-            Console.WriteLine($"The number of numbers whose square is not more than {number} = {countNumbers - 1}");
+            return countNumbers;
         }
 
-        // Task 4
-        static void FindLargestDivisor()
+        /// <summary>
+        /// Returns the largest divisor of the transmitted number
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static double FindLargestDivisor(double number)
         {
-            Console.Write("Enter a number: ");
-            int number = Convert.ToInt32(Console.ReadLine());
-            int divisor = number;
+            double LargestDivisor = number;
 
             do
             {
-                divisor--;
-            } while (number % divisor != 0);
+                LargestDivisor--;
+            } while (number % LargestDivisor != 0);
 
-            Console.WriteLine($"The largest divisor of a number {number} = {divisor}");
+            return LargestDivisor;
         }
 
-        // Task 5
-        static void FindSumOfNumbersWithDivisorOf7()
+        /// <summary>
+        /// Returns the sum of the numbers in the transmitted range, which are divided without remainder by 7
+        /// </summary>
+        /// <param name="leftBorder"></param>
+        /// <param name="rightBorder"></param>
+        /// <returns></returns>
+        public static int FindSumOfNumbersWithDivisorOf7(int leftBorder, int rightBorder)
         {
-            Console.Write("Enter the left border: ");
-            int leftBorder = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter the right border: ");
-            int rightBorder = Convert.ToInt32(Console.ReadLine());
             int SumNumbers = 0;
 
             if (leftBorder > rightBorder)
@@ -91,15 +107,16 @@ namespace DevEducationOOP
                 }
             }
 
-            Console.WriteLine($"The sum of the numbers that are divisible by 7 = {SumNumbers}");
+            return SumNumbers;
         }
 
-        // Task 6
-        static void FindFibonacciNumber()
+        /// <summary>
+        /// Returns the Fibonacci number for the transmitted position
+        /// </summary>
+        /// <param name="serialNumber"></param>
+        /// <returns></returns>
+        public static int FindFibonacciNumber(int serialNumber)
         {
-            Console.Write("Enter the number of the Fibonacci number: ");
-            int serialNumber = Convert.ToInt32(Console.ReadLine());
-
             int firstNumber = 1;
             int secondNumber = 1;
             int thirdNumber = 1;
@@ -111,16 +128,17 @@ namespace DevEducationOOP
                 secondNumber = thirdNumber;
             }
 
-            Console.WriteLine($"The number of the Fibonacci series under the number {serialNumber} = {thirdNumber}");
+            return thirdNumber;
         }
 
-        // Task 7
-        static void FindDivisorByEuclidAlgorithm()
+        /// <summary>
+        /// Returns the largest divisor of two transmitted numbers
+        /// </summary>
+        /// <param name="number1"></param>
+        /// <param name="number2"></param>
+        /// <returns></returns>
+        public static int FindDivisorByEuclidAlgorithm(int number1, int number2)
         {
-            Console.Write("Enter the first number: ");
-            int number1 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter the second number: ");
-            int number2 = Convert.ToInt32(Console.ReadLine());
 
             if (number2 > number1)
             {
@@ -138,14 +156,16 @@ namespace DevEducationOOP
                 number2 = largestDivisor;
             }
 
-            Console.WriteLine($"The largest divisor of numbers = {largestDivisor}");
+            return largestDivisor;
         }
 
-        // Task 8
-        static void FindNumberByMethodOfHalfDivision()
+        /// <summary>
+        /// Returns the root of the equation x = N^3
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static double FindRootByMethodOfHalfDivision(double number)
         {
-            Console.Write("Enter the number: ");
-            double number = Convert.ToDouble(Console.ReadLine());
             double rightBorder = number;
             double leftBorder = 0;
             double middleInterval = (rightBorder + leftBorder) / 2;
@@ -166,14 +186,16 @@ namespace DevEducationOOP
                 }
             }
 
-            Console.WriteLine($"curt({number}) = {middleInterval}");
+            return middleInterval;
         }
 
-        // Task 9
-        static void FindQuantityOddNumbers()
+        /// <summary>
+        /// Returns the number of odd units in the transmitted number
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static int FindQuantityOddNumbers(int number)
         {
-            Console.Write("Enter the number: ");
-            int number = Convert.ToInt32(Console.ReadLine());
             int countOddNumbers = 0;
             int unit;
 
@@ -187,14 +209,16 @@ namespace DevEducationOOP
                 }
             }
 
-            Console.WriteLine($"The number of odd numbers = {countOddNumbers}");
+            return countOddNumbers;
         }
 
-        // Task 10
-        static void FindMirrorNumber()
+        /// <summary>
+        /// Returns the mirror number of the transmitted number
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static int FindMirrorNumber(int number)
         {
-            Console.Write("Enter the number: ");
-            int number = Convert.ToInt32(Console.ReadLine());
             int mirrorNumber = 0;
             int unit;
 
@@ -205,19 +229,22 @@ namespace DevEducationOOP
                 number /= 10;
             }
 
-            Console.WriteLine($"Mirror number = {mirrorNumber}");
+            return mirrorNumber;
         }
 
-        // Task 11
-        static void FindNumbersWithLargerSumOfEven()
+        /// <summary>
+        /// Returns a list of numbers in the range from 1 to the transmitted number in which the 
+        /// sum of even units is greater than the sum of odd ones
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static List<int> FindNumbersWithLargerSumOfEven(int number)
         {
-            Console.Write("Enter the number: ");
-            int number = Convert.ToInt32(Console.ReadLine());
+            List<int> numbers = new List<int>();
             int tmp;
             int sumOdd = 0;
             int sumEven = 0;
             int unit;
-            Console.WriteLine($"Numbers in the range from 1 to {number}: ");
 
             for (int i = 1; i < number; i++)
             {
@@ -239,26 +266,27 @@ namespace DevEducationOOP
 
                 if (sumEven > sumOdd)
                 {
-                    Console.WriteLine(i);
+                    numbers.Add(i);
                 }
 
                 sumOdd = 0;
                 sumEven = 0;
             }
+
+            return numbers;
         }
 
-        // Task 12
-        static void ThereAreIdenticalUnits()
+        /// <summary>
+        /// Returns the result of comparing two passed numbers, if they have the same units, then returns true, otherwise false
+        /// </summary>
+        /// <param name="number1"></param>
+        /// <param name="number2"></param>
+        /// <returns></returns>
+        public static bool ThereAreIdenticalUnits(int number1, int number2)
         {
-            Console.Write("Enter the first number: ");
-            int number1 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter the second number: ");
-            int number2 = Convert.ToInt32(Console.ReadLine());
             int tmp = number2;
             int unitNumber1;
             int unitNumber2;
-
-            Console.WriteLine("Let's check if these numbers have the same digits.");
 
             while (number1 != 0)
             {
@@ -272,15 +300,14 @@ namespace DevEducationOOP
 
                     if (unitNumber1 == unitNumber2)
                     {
-                        Console.WriteLine("Yes");
-                        return;
+                        return true;
                     }
                 }
 
                 number2 = tmp;
             }
 
-            Console.WriteLine("No");
+            return false;
         }
     }
 }
