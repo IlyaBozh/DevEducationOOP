@@ -1,7 +1,9 @@
 
 ﻿using DevEducationOOP;
-string res1 = Conditions.TranslatNumberIntoWrittenForm(13);
-Console.WriteLine(res1);
-
+List<int> res1 = Cycles.FindDivisibleNumbers(45);
+foreach (int i in res1)
+{
+    Console.WriteLine(i);
+}
 
 
