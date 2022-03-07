@@ -140,8 +140,6 @@ namespace DevEducationOOP
             return sortNumbers;
         }
 
-        #region Methods for solving the quadratic equation
-
         /// <summary>
         /// Returns the roots of the quadratic equation
         /// </summary>
@@ -152,7 +150,8 @@ namespace DevEducationOOP
         /// <exception cref="Exception"></exception>
         public static string SolveQuadraticEquation(double firstCoefficient, double secondCoefficient, double freeTerm)
         {
-            double discriminant = FindDiscriminant(firstCoefficient, secondCoefficient, freeTerm);
+            double discriminant = Math.Pow(secondCoefficient, 2) - 4 * firstCoefficient * freeTerm;
+            string result;
 
             if (firstCoefficient == 0)
             {
@@ -161,46 +160,27 @@ namespace DevEducationOOP
 
             if (discriminant > 0)
             {
-                return FindRootsOfQuadraticEquation(firstCoefficient, secondCoefficient, discriminant);
+                double x1 = (-secondCoefficient + Math.Sqrt(discriminant)) / (2 * firstCoefficient);
+                double x2 = (-secondCoefficient - Math.Sqrt(discriminant)) / (2 * firstCoefficient);
+                result =  "x1 = " + x1 + "\nx2 = " + x2;
             }
 
             else if (discriminant == 0)
             {
-                return FindRootOfQuadraticEquation(firstCoefficient, secondCoefficient);
+                double x = -secondCoefficient / (2 * firstCoefficient);
+                result =  "x = " + x;
             }
 
             else
             {
-                return FindComplexRootsOfQuadraticEquation(firstCoefficient, secondCoefficient, discriminant);
+                double actualPart = -secondCoefficient / (2 * firstCoefficient);
+                double imaginaryPart = (Math.Sqrt(discriminant * (-1))) / (2 * firstCoefficient);
+                result =  "x1 = " + actualPart + " + " + imaginaryPart + "i" + "\nx2 = " + actualPart + " - " + imaginaryPart + "i";
             }
+
+            return result;
         }
 
-        private static double FindDiscriminant(double firstCoefficient, double secondCoefficient, double freeTerm)
-        {
-            return Math.Pow(secondCoefficient, 2) - 4 * firstCoefficient * freeTerm;
-        }
-
-        private static string FindRootsOfQuadraticEquation(double firstCoefficient, double secondCoefficient, double discriminant)
-        {
-            double x1 = (-secondCoefficient + Math.Sqrt(discriminant)) / (2 * firstCoefficient);
-            double x2 = (-secondCoefficient - Math.Sqrt(discriminant)) / (2 * firstCoefficient);
-            return "x1 = " + x1 + "\nx2 = " + x2;
-        }
-
-        private static string FindRootOfQuadraticEquation(double firstCoefficient, double secondCoefficient)
-        {
-            double x = -secondCoefficient / (2 * firstCoefficient);
-            return "x = " + x;
-        }
-
-        private static string FindComplexRootsOfQuadraticEquation(double firstCoefficient, double secondCoefficient, double discriminant)
-        {
-            double actualPart = -secondCoefficient / (2 * firstCoefficient);
-            double imaginaryPart = (Math.Sqrt(discriminant * (-1))) / (2 * firstCoefficient);
-            return "x1 = " + actualPart + " + " + imaginaryPart + "i" + "\nx2 = " + actualPart + " - " + imaginaryPart + "i";
-        }
-
-        #endregion
 
         #region Methods for translating numbers into written form
 
@@ -211,6 +191,11 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static string TranslatNumberIntoWrittenForm(int number)
         {
+            if (number < 10 || number > 99)
+            {
+                throw new Exception("The number does not correspond to the range from 10 to 99");
+            }
+
             int dozen = number / 10;
             int unit = number % 10;
             string writtenFormNumbe;

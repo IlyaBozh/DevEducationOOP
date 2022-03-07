@@ -20,7 +20,7 @@ namespace DevEducationOOP
 
             for (int i = 0; i < Math.Abs(degreeNumber); i++)
             {
-                result = result * number;
+                result *= number;
             }
 
             if (degreeNumber < 0)
@@ -72,12 +72,13 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static double FindLargestDivisor(double number)
         {
+            number = Math.Abs(number);
             double LargestDivisor = number;
 
             do
             {
                 LargestDivisor--;
-            } while (number % LargestDivisor != 0);
+            } while (number % Math.Abs(LargestDivisor) != 0);
 
             return LargestDivisor;
         }
@@ -117,6 +118,11 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static int FindFibonacciNumber(int serialNumber)
         {
+            if (serialNumber < 0)
+            {
+                throw new Exception("The sequence number is less than 0");
+            }
+
             int firstNumber = 1;
             int secondNumber = 1;
             int thirdNumber = 1;
@@ -156,7 +162,7 @@ namespace DevEducationOOP
                 number2 = largestDivisor;
             }
 
-            return largestDivisor;
+            return Math.Abs(largestDivisor);
         }
 
         /// <summary>
@@ -166,6 +172,11 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static double FindRootByMethodOfHalfDivision(double number)
         {
+            if (number < 0)
+            {
+                throw new Exception("The transmitted number is negative");
+            }
+
             double rightBorder = number;
             double leftBorder = 0;
             double middleInterval = (rightBorder + leftBorder) / 2;
@@ -240,6 +251,11 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static List<int> FindNumbersWithLargerSumOfEven(int number)
         {
+            if (number < 0)
+            {
+                throw new Exception("The transmitted number is negative");
+            }
+
             List<int> numbers = new List<int>();
             int tmp;
             int sumOdd = 0;
