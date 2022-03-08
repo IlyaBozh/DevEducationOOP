@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevEducationOOP
 {
-    internal class Variables
+    internal class Variable
     {
         /// <summary>
         /// Divides two numbers

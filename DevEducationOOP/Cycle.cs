@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevEducationOOP
 {
-    internal class Cycles
+    internal class Cycle
     {
         /// <summary>
         /// Raises a number to a power
@@ -36,7 +36,7 @@ namespace DevEducationOOP
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        public static List<int> FindDivisibleNumbers(int number)
+        public static int[] FindDivisibleNumbers(int number)
         {
             List<int> divisibleNumbers = new List<int>();
 
@@ -45,7 +45,7 @@ namespace DevEducationOOP
                 divisibleNumbers.Add(i);
             }
 
-            return divisibleNumbers;
+            return divisibleNumbers.ToArray();
         }
 
         /// <summary>
@@ -249,7 +249,7 @@ namespace DevEducationOOP
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        public static List<int> FindNumbersWithLargerSumOfEven(int number)
+        public static int[] FindNumbersWithLargerSumOfEven(int number)
         {
             if (number < 0)
             {
@@ -289,7 +289,7 @@ namespace DevEducationOOP
                 sumEven = 0;
             }
 
-            return numbers;
+            return numbers.ToArray();
         }
 
         /// <summary>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevEducationOOP
 {
-    internal class Conditions
+    internal class Condition
     {
         /// <summary>
         /// Returns the result of an arithmetic operation on numbers, which is selected based on the specified numbers
