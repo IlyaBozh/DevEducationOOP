@@ -93,48 +93,36 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static double[] SortNumbers(double number1, double number2, double number3)
         {
-            double[] sortNumbers = new double[3];
+            double[] sortNumbers;
 
             if (number1 > number2 && number2 > number3)
             {
-                sortNumbers[0] = number3;
-                sortNumbers[1] = number2;
-                sortNumbers[2] = number1;
+                sortNumbers = new double[3] {number3, number2, number1};
             }
 
             else if (number1 > number2 && number3 > number2 && number1 > number3)
             {
-                sortNumbers[0] = number2;
-                sortNumbers[1] = number3;
-                sortNumbers[2] = number1;
+                sortNumbers = new double[3] { number2, number3, number1 };
             }
 
             else if (number2 > number1 && number1 > number3)
             {
-                sortNumbers[0] = number3;
-                sortNumbers[1] = number1;
-                sortNumbers[2] = number2;
+                sortNumbers = new double[3] { number3, number1, number2};
             }
 
             else if (number2 > number1 && number3 > number1 && number2 > number3)
             {
-                sortNumbers[0] = number1;
-                sortNumbers[1] = number3;
-                sortNumbers[2] = number2;
+                sortNumbers = new double[3] { number1, number3, number2 };
             }
 
             else if (number3 > number1 && number1 > number2)
             {
-                sortNumbers[0] = number2;
-                sortNumbers[1] = number1;
-                sortNumbers[2] = number3;
+                sortNumbers = new double[3] { number2, number1, number3 };
             }
 
             else
             {
-                sortNumbers[0] = number1;
-                sortNumbers[1] = number2;
-                sortNumbers[2] = number3;
+                sortNumbers = new double[3] { number1, number2, number3 };
             }
 
             return sortNumbers;
@@ -180,7 +168,6 @@ namespace DevEducationOOP
 
             return result;
         }
-
 
         #region Methods for translating numbers into written form
 
