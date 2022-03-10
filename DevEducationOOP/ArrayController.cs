@@ -147,12 +147,14 @@ namespace DevEducationOOP
         {
             int[] newArray = Copy(array);
             int tmp;
+            int stepOfRightPart = array.Length - 1;
+            int stepOfLeftPart = newArray.Length / 2 - 1;
 
             for (int i = 0; i < newArray.Length / 2; i++)
             {
-                tmp = newArray[array.Length - i - 1];
-                newArray[array.Length - i - 1] = newArray[newArray.Length / 2 - i - 1];
-                newArray[newArray.Length / 2 - i - 1] = tmp;
+                tmp = newArray[stepOfRightPart - i];
+                newArray[stepOfRightPart - i] = newArray[stepOfLeftPart - i];
+                newArray[stepOfLeftPart - i] = tmp;
             }
 
             return newArray;

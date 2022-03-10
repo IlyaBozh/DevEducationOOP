@@ -62,7 +62,7 @@ namespace DevEducationOOP
                 countNumbers++;
             }
 
-            return countNumbers;
+            return --countNumbers;
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static int FindSumOfNumbersWithDivisorOf7(int leftBorder, int rightBorder)
         {
-            int SumNumbers = 0;
+            int sumNumbers = 0;
 
             if (leftBorder > rightBorder)
             {
@@ -104,11 +104,11 @@ namespace DevEducationOOP
             {
                 if (i % 7 == 0)
                 {
-                    SumNumbers += i;
+                    sumNumbers += i;
                 }
             }
 
-            return SumNumbers;
+            return sumNumbers;
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace DevEducationOOP
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        public static double FindRootByMethodOfHalfDivision(double number)
+        public static double FindRootByMethodOfHalfDivision(double number, double errorRate = 0.02)
         {
             if (number < 0)
             {
@@ -180,7 +180,6 @@ namespace DevEducationOOP
             double rightBorder = number;
             double leftBorder = 0;
             double middleInterval = (rightBorder + leftBorder) / 2;
-            double errorRate = 0.02;
 
             while (number > Math.Pow(middleInterval, 3) + errorRate || number < Math.Pow(middleInterval, 3) - errorRate)
             {
@@ -298,7 +297,7 @@ namespace DevEducationOOP
         /// <param name="number1"></param>
         /// <param name="number2"></param>
         /// <returns></returns>
-        public static bool ThereAreIdenticalUnits(int number1, int number2)
+        public static bool IsIdenticalUnits(int number1, int number2)
         {
             int tmp = number2;
             int unitNumber1;
