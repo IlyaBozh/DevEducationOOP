@@ -8,14 +8,14 @@ namespace DevEducationOOP
 {
     internal class ArrayController
     {
-        public static int[] CreateRandom(int length)
+        public static int[] CreateRandom(int length, int min = -100, int max = 101)
         {
             Random random = new Random();
             int[] array = new int[length];
 
             for (int i = 0; i < length; i++)
             {
-                array[i] = random.Next(-100, 100);
+                array[i] = random.Next(min, max);
             }
 
             return array;
@@ -143,18 +143,18 @@ namespace DevEducationOOP
             return numberOfOddElements;
         }
 
-        public static int[] SwapHalves(int[] array)
+        public static int[] SwapHalf(int[] array)
         {
             int[] newArray = Copy(array);
             int tmp;
-            int stepOfRightPart = array.Length - 1;
-            int stepOfLeftPart = newArray.Length / 2 - 1;
+            int n = newArray.Length / 2;
+            int step = n + newArray.Length % 2;
 
-            for (int i = 0; i < newArray.Length / 2; i++)
+            for (int i = 0; i < n; i++)
             {
-                tmp = newArray[stepOfRightPart - i];
-                newArray[stepOfRightPart - i] = newArray[stepOfLeftPart - i];
-                newArray[stepOfLeftPart - i] = tmp;
+                tmp = newArray[i];
+                newArray[i] = newArray[i + step];
+                newArray[i + step] = tmp;
             }
 
             return newArray;

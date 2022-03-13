@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DevEducationOOP
+namespace DevEducationOOP 
 {
-    internal class Variable
+    public class Variable
     {
         /// <summary>
         /// Divides two numbers
@@ -85,6 +85,11 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static string FindEquationOfStraightLine(double x1, double y1, double x2, double y2)
         {
+            if (x1 == x2)
+            {
+                throw new Exception("The x-coordinates of the points should not be equal");
+            }
+
             string equationOfStraightLine;
             double tmp1 = (y2 - y1) / (x2 - x1);
             double tmp2 = -x1 * (y2 - y1) / (x2 - x1) + y1;

@@ -8,16 +8,16 @@ namespace DevEducationOOP
 {
     internal class TwoDimensionalArrayController
     {
-        public static int[ , ] CreateRandom(int length)
+        public static int[ , ] CreateRandom(int numberOfRow, int numberOfcolumn, int min = -100, int max = 101)
         {
             Random random = new Random();
-            int[ , ] array = new int[length, length];
+            int[ , ] array = new int[numberOfRow, numberOfcolumn];
 
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < numberOfRow; i++)
             {
-                for (int j = 0; j < length; j++)
+                for (int j = 0; j < numberOfcolumn; j++)
                 {
-                    array[i, j] = random.Next(-100, 100);
+                    array[i, j] = random.Next(min, max);
                 }
             }
 
@@ -124,59 +124,20 @@ namespace DevEducationOOP
             return (indexOfMaxElementRow, indexOfMaxElementColumn);
         }
 
-        public static int FindNumberOfElementsThatLargerThanNeighboring(int [ , ] array)
+        public static int CountElementsHigherThanNeighbor(int [ , ] array)
         {
             int numberOfLargeElements = 0;
-            int leftNeighbor;
-            int rightNeighbor;
-            int upperNeighbor;
-            int lowerNeighbor;
 
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength (1); j++)
                 {
-                    if (i == 0)
-                    {
-                        upperNeighbor = array[i, j] - 1;
-                    }
-
-                    else
-                    {
-                        upperNeighbor = array[i - 1, j];
-                    }
-
-                    if (i == array.GetLength(0) - 1)
-                    {
-                        lowerNeighbor = array[i, j] - 1;
-                    }
-
-                    else
-                    {
-                        lowerNeighbor = array[i + 1, j];
-                    }
-
-                    if (j == 0)
-                    {
-                        leftNeighbor = array[i, j] - 1;
-                    }
-
-                    else
-                    {
-                        leftNeighbor = array[i, j - 1];
-                    }
-
-                    if (j == array.GetLength(1) - 1)
-                    {
-                        rightNeighbor = array[i, j] - 1;
-                    }
-
-                    else
-                    {
-                        rightNeighbor = array[i, j + 1];
-                    }
-
-                    if (array[i, j] > rightNeighbor && array[i, j] > leftNeighbor && array[i, j] > upperNeighbor && array[i, j] > lowerNeighbor)
+                    if (
+                        (i == 0 || array[i, j] > array[i - 1, j]) 
+                        && (i == array.GetLength(0) - 1 || array[i, j] > array[i + 1, j])
+                        && (j == 0 || array[i, j] > array[i, j - 1])
+                        && (j == array.GetLength(1) - 1 || array[i, j] > array[i, j + 1])
+                        )
                     {
                         numberOfLargeElements++;
                     }

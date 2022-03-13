@@ -3,11 +3,12 @@
 /*int a = Cycle.FindSmallerSquaresOfNumbers(63);
 Console.WriteLine(a);*/
 
-int[ , ] a = TwoDimensionalArrayController.CreateRandom(4);
+int[ , ] a = TwoDimensionalArrayController.CreateRandom(2, 4);
 TwoDimensionalArrayController.PrintArray(a);
 
-int[,] b = TwoDimensionalArrayController.SwapPartsRelativeToMainDiagonal(a);
-TwoDimensionalArrayController.PrintArray(b);
+int b = TwoDimensionalArrayController.CountElementsHigherThanNeighbor(a);
+Console.WriteLine(b);
+//TwoDimensionalArrayController.PrintArray(b);
 
 
 /*int[] b = ArrayController.SwapHalves(a);

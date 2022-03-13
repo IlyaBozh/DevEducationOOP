@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevEducationOOP", "DevEducationOOP\DevEducationOOP.csproj", "{23ECBEC6-9E72-43D2-A6F1-85FA7D7FE576}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevEducationOOP", "DevEducationOOP\DevEducationOOP.csproj", "{23ECBEC6-9E72-43D2-A6F1-85FA7D7FE576}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevEducationOOP.Test", "DevEducationOOP.Test\DevEducationOOP.Test.csproj", "{F6FAE17E-E2EA-48FE-B873-ADA0B91387C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{23ECBEC6-9E72-43D2-A6F1-85FA7D7FE576}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23ECBEC6-9E72-43D2-A6F1-85FA7D7FE576}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23ECBEC6-9E72-43D2-A6F1-85FA7D7FE576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6FAE17E-E2EA-48FE-B873-ADA0B91387C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6FAE17E-E2EA-48FE-B873-ADA0B91387C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6FAE17E-E2EA-48FE-B873-ADA0B91387C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6FAE17E-E2EA-48FE-B873-ADA0B91387C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
