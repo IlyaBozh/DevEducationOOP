@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevEducationOOP
 {
-    internal class Condition
+    public class Condition
     {
         /// <summary>
         /// Returns the result of an arithmetic operation on numbers, which is selected based on the specified numbers
@@ -48,37 +48,37 @@ namespace DevEducationOOP
 
             if (x == 0 && y == 0)
             {
-                result = "The point lies at the origin of the coordinates";
+                result = "On origin of the coordinates";
             }
 
             else if (x == 0)
             {
-                result = "The point lies on the x axis";
+                result = "On the y axis";
             }
 
             else if (y == 0)
             {
-                result = "The point lies on the y axis";
+                result = "On the x axis";
             }
 
             else if (x > 0 && y > 0)
             {
-                result = "The point belongs to the first quarter of the coordinate plane";
+                result = "On the first quarter of the coordinate plane";
             }
 
             else if (x < 0 && y > 0)
             {
-                result = "The point belongs to the second quarter of the coordinate plane";
+                result = "On the second quarter of the coordinate plane";
             }
 
             else if (x < 0 && y < 0)
             {
-                result = "The point belongs to the third quarter of the coordinate plane";
+                result = "On the third quarter of the coordinate plane";
             }
 
             else
             {
-                result = "The point belongs to the fourth quarter of the coordinate plane";
+                result = "On the fourth quarter of the coordinate plane";
             }
 
             return result;
@@ -138,13 +138,13 @@ namespace DevEducationOOP
         /// <exception cref="Exception"></exception>
         public static string SolveQuadraticEquation(double firstCoefficient, double secondCoefficient, double freeTerm)
         {
-            double discriminant = Math.Pow(secondCoefficient, 2) - 4 * firstCoefficient * freeTerm;
-            string result;
-
             if (firstCoefficient == 0)
             {
                 throw new Exception("The first coefficient cannot be equal to 0");
             }
+
+            double discriminant = Math.Pow(secondCoefficient, 2) - 4 * firstCoefficient * freeTerm;
+            string result;
 
             if (discriminant > 0)
             {

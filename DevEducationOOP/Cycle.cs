@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevEducationOOP
 {
-    internal class Cycle
+    public class Cycle
     {
         /// <summary>
         /// Raises a number to a power
@@ -38,9 +38,14 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static int[] FindDivisibleNumbers(int number)
         {
+            if (number == 0)
+            {
+                throw new Exception("Division by 0, the number must be greater than or less than 0");
+            }
+
             List<int> divisibleNumbers = new List<int>();
 
-            for (int i = number; i <= 1000; i += number)
+            for (int i = Math.Abs(number); i <= 1000; i += Math.Abs(number))
             {
                 divisibleNumbers.Add(i);
             }
@@ -55,14 +60,15 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static int FindSmallerSquaresOfNumbers(int number)
         {
-            int countNumbers = 0;
+            int countNumber = 0;
 
-            while (Math.Pow(countNumbers, 2) < number)
+            while (Math.Pow(countNumber, 2) < number)  
             {
-                countNumbers++;
+                countNumber++;
             }
 
-            return --countNumbers;
+            _ = number <= 1 ? countNumber = 0 : countNumber--;
+            return countNumber;
         }
 
         /// <summary>
@@ -70,17 +76,17 @@ namespace DevEducationOOP
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        public static double FindLargestDivisor(double number)
+        public static int FindLargestDivisor(int number)
         {
             number = Math.Abs(number);
-            double LargestDivisor = number;
+            int largestDivisor = number;
 
             do
             {
-                LargestDivisor--;
-            } while (number % Math.Abs(LargestDivisor) != 0);
+                largestDivisor--;
+            } while (number % largestDivisor != 0);
 
-            return LargestDivisor;
+            return largestDivisor;
         }
 
         /// <summary>
@@ -172,18 +178,16 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static double FindRootByMethodOfHalfDivision(double number, double errorRate = 0.02)
         {
-            if (number < 0)
-            {
-                throw new Exception("The transmitted number is negative");
-            }
-
-            double rightBorder = number;
+            double rightBorder = Math.Abs(number);
             double leftBorder = 0;
             double middleInterval = (rightBorder + leftBorder) / 2;
 
-            while (number > Math.Pow(middleInterval, 3) + errorRate || number < Math.Pow(middleInterval, 3) - errorRate)
+            while (
+                (Math.Abs(number) > Math.Pow(middleInterval, 3) + errorRate 
+                || number < Math.Pow(middleInterval, 3) - errorRate)
+                && Math.Abs(number) != Math.Pow(middleInterval, 3))
             {
-                if (Math.Pow(middleInterval, 3) > number)
+                if (Math.Pow(middleInterval, 3) > Math.Abs(number))
                 {
                     rightBorder = middleInterval;
                     middleInterval = (rightBorder + leftBorder) / 2;
@@ -194,6 +198,11 @@ namespace DevEducationOOP
                     leftBorder = middleInterval;
                     middleInterval = (rightBorder + leftBorder) / 2;
                 }
+            }
+
+            if (number < 0)
+            {
+                middleInterval *= -1;
             }
 
             return middleInterval;
@@ -250,7 +259,7 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static int[] FindNumbersWithLargerSumOfEven(int number)
         {
-            if (number < 0)
+            if (number <= 0)
             {
                 throw new Exception("The transmitted number is negative");
             }
@@ -299,6 +308,8 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static bool IsIdenticalUnits(int number1, int number2)
         {
+            number1 = Math.Abs(number1);
+            number2 = Math.Abs(number2);
             int tmp = number2;
             int unitNumber1;
             int unitNumber2;
