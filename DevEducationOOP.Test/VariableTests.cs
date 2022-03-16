@@ -19,6 +19,8 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedRemainder, actualRemainder);
         }
 
+
+
         [TestCase(5, 0)]
         [TestCase(-3, 0)]
         [TestCase(0, 0)]
@@ -26,6 +28,8 @@ namespace DevEducationOOP.Test
         {
             Assert.Throws<Exception>(() => Variable.DivisionWithRemainder(divisible, divisorint, out int divisionResult, out int remainder)); 
         }
+
+
 
         [TestCase(3, 7, 16)]
         [TestCase(-5, 2, -3)]
@@ -40,6 +44,7 @@ namespace DevEducationOOP.Test
         }
 
 
+
         [TestCase(4, 4)]
         [TestCase(-12, -12)]
         [TestCase(0, 0)]
@@ -47,6 +52,8 @@ namespace DevEducationOOP.Test
         {
             Assert.Throws<Exception>(() => Variable.SolveExpression(number1, number2));
         }
+
+
 
         [TestCase("1234", "5678", "5678", "1234")]
         [TestCase("", "Goodbye", "Goodbye", "")]
@@ -60,6 +67,8 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedStr1, actualStr1);
             Assert.AreEqual(expectedStr2, actuaStr2);
         }
+
+
 
         [TestCase(4, 1, 2, 0.25)]
         [TestCase(6, -4, 8, 2)]
@@ -75,6 +84,8 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedRoot, actualRoot);
         }
 
+
+
         [TestCase(0, 2, 6)]
         [TestCase(0, 0, 0)]
         [TestCase(0, -23, -37)]
@@ -82,6 +93,7 @@ namespace DevEducationOOP.Test
         {
             Assert.Throws<Exception>(() => Variable.SolveLinearEquation(firstTerm, secondTerm, thirdTerm));
         }
+
 
 
         [TestCase(2, 7, 4, 7, "y = 7")]
@@ -96,6 +108,8 @@ namespace DevEducationOOP.Test
             string actualEquationOfStraightLine = Variable.FindEquationOfStraightLine(x1, y1, x2, y2);
             Assert.AreEqual(expectedEquationOfStraightLine, actualEquationOfStraightLine);
         }
+
+
 
         [TestCase(4, -6, 4, -12)]
         [TestCase(-12, 65, -12, 1)]

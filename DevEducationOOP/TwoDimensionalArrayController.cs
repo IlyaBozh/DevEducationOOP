@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevEducationOOP
 {
-    internal class TwoDimensionalArrayController
+    public class TwoDimensionalArrayController
     {
         public static int[ , ] CreateRandom(int numberOfRow, int numberOfcolumn, int min = -100, int max = 101)
         {
@@ -46,6 +46,11 @@ namespace DevEducationOOP
 
         public static int FindMinElement(int[ , ] array)
         {
+            if (array.Length == 0)
+            {
+                throw new Exception("An empty array was passed, there is no minimum element");
+            }
+
             int minElement = array[0, 0];
 
             for (int i = 0; i < array.GetLength(0); i++)
@@ -64,6 +69,11 @@ namespace DevEducationOOP
 
         public static int FindMaxElement(int[ , ] array)
         {
+            if (array.Length == 0)
+            {
+                throw new Exception("An empty array was passed, there is no maximum element");
+            }
+
             int maxElement = array[0, 0];
 
             for (int i = 0; i < array.GetLength(0); i++)
@@ -82,9 +92,13 @@ namespace DevEducationOOP
 
         public static (int, int) FindIndexOfMinElement(int[ , ] array)
         {
+            if (array.Length == 0)
+            {
+                throw new Exception("An empty array was passed, there is no minimum element");
+            }
+
             int minElement = array[0, 0];
-            int indexOfMinElementRow = 0;
-            int indexOfMinElementColumn = 0;
+            (int, int) indexOfMinElement = (0, 0);
 
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -93,17 +107,22 @@ namespace DevEducationOOP
                     if (array[i, j] < minElement)
                     {
                         minElement = array[i, j];
-                        indexOfMinElementRow = i;
-                        indexOfMinElementColumn = j;
+                        indexOfMinElement.Item1 = i;
+                        indexOfMinElement.Item2 = j;
                     }
                 }
             }
 
-            return (indexOfMinElementRow, indexOfMinElementColumn);
+            return indexOfMinElement;
         }
 
         public static (int, int) FindIndexOfMaxElement(int[ , ] array)
         {
+            if (array.Length == 0)
+            {
+                throw new Exception("An empty array was passed, there is no maximum element");
+            }
+
             int maxElement = array[0, 0];
             int indexOfMaxElementRow = 0;
             int indexOfMaxElementColumn = 0;

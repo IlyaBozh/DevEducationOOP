@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevEducationOOP
 {
-    internal class ArrayController
+    public class ArrayController
     {
         public static int[] CreateRandom(int length, int min = -100, int max = 101)
         {
@@ -39,6 +39,11 @@ namespace DevEducationOOP
 
         public static int FindMinElement(int[] array)
         {
+            if (array.Length == 0)
+            {
+                throw new Exception("An empty array was passed, there is no minimum element");
+            }
+
             int minElement = array[0];
 
             for (int i = 1; i < array.Length; i++)
@@ -54,6 +59,11 @@ namespace DevEducationOOP
 
         public static int FindMaxElement(int[] array)
         {
+            if (array.Length == 0)
+            {
+                throw new Exception("An empty array was passed, there is no maximum element");
+            }
+
             int maxElement = array[0];
 
             for (int i = 1; i < array.Length; i++)
@@ -69,6 +79,11 @@ namespace DevEducationOOP
 
         public static int FindIndexOfMinElement(int[] array)
         {
+            if (array.Length == 0)
+            {
+                throw new Exception("An empty array was passed, there is no minimum element");
+            }
+
             int minElement = array[0];
             int indexOfminElement = 0;
 
@@ -86,6 +101,11 @@ namespace DevEducationOOP
 
         public static int FindIndexOfMaxElement(int[] array)
         {
+            if (array.Length == 0)
+            {
+                throw new Exception("An empty array was passed, there is no maximum element");
+            }
+
             int maxElement = array[0];
             int indexOfmaxElement = 0;
 

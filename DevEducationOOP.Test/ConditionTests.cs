@@ -15,6 +15,8 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedResult, actualResult);
         }
 
+
+
         [TestCase(0, 0, "On origin of the coordinates")]
         [TestCase(0, 7, "On the y axis")]
         [TestCase(-3, 0, "On the x axis")]
@@ -28,17 +30,21 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedResult, actualResult);
         }
 
-        [TestCase(2, 5, 6, new double [3] { 2, 5, 6 })]
-        [TestCase(1, 12, 8, new double [3] { 1, 8, 12 })]
-        [TestCase(23, 5, 17, new double [3] { 5, 17, 23 })]
-        [TestCase(55, 44, 22, new double [3] { 22, 44, 55 })]
-        [TestCase(11, 102, 2, new double [3] { 2, 11, 102 })]
-        [TestCase(32, 29, 87, new double [3] { 29, 32, 87 })]
+
+
+        [TestCase(2, 5, 6, new double [] { 2, 5, 6 })]
+        [TestCase(1, 12, 8, new double [] { 1, 8, 12 })]
+        [TestCase(23, 5, 17, new double [] { 5, 17, 23 })]
+        [TestCase(55, 44, 22, new double [] { 22, 44, 55 })]
+        [TestCase(11, 102, 2, new double [] { 2, 11, 102 })]
+        [TestCase(32, 29, 87, new double [] { 29, 32, 87 })]
         public void SortNumbersTest(double number1, double number2, double number3, double[] expectedSortNumbers)
         {
             double[] actualSortNumbers = Condition.SortNumbers(number1, number2, number3);
             Assert.AreEqual(expectedSortNumbers, actualSortNumbers);
         }
+
+
 
         [TestCase(1, -4, 4, "x = 2")]
         [TestCase(1, 3, -4, "x1 = 1\nx2 = -4")]
@@ -48,6 +54,8 @@ namespace DevEducationOOP.Test
             string actualResult = Condition.SolveQuadraticEquation(firstCoefficient, secondCoefficient, freeTerm);
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+
 
         [TestCase(0, 4, -2)]
         [TestCase(0, 0, 0)]
@@ -59,6 +67,8 @@ namespace DevEducationOOP.Test
             Assert.Throws<Exception>(() => Condition.SolveQuadraticEquation(firstCoefficient, secondCoefficient, freeTerm));
         }
 
+
+
         [TestCase(16, "sixteen")]
         [TestCase(78, "seventy eight")]
         [TestCase(40, "fourty ")]
@@ -67,6 +77,8 @@ namespace DevEducationOOP.Test
             string actualWriteFormNumber = Condition.TranslatNumberIntoWrittenForm(number);
             Assert.AreEqual(expectedWrittenFormNumbe, actualWriteFormNumber);
         }
+
+
 
         [TestCase(3)]
         [TestCase(456)]

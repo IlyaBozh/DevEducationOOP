@@ -16,6 +16,7 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedResult, actualResult);  
         }
 
+
         
         [TestCase(150, new int[6] {150, 300, 450, 600, 750, 900})]
         [TestCase(-200, new int[5] {200, 400, 600, 800, 1000})]
@@ -25,11 +26,14 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedDivisibleNumbers, actualDivisibleNumbers);
         }
 
+
+
         [TestCase(0)]
         public void FindDivisibleNumbersTest_WhenNumberEqualZero_ShouldThrowExeption(int number)
         {
             Assert.Throws<Exception>(() => Cycle.FindDivisibleNumbers(number));
         }
+
 
 
         [TestCase(6, 2)]
@@ -42,6 +46,8 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedCountNumber, actualCountNumber);
         }
 
+
+
         [TestCase(60, 30)]
         [TestCase(-124, 62)]
         public void FindLargestDivisorTest(int number, int expectedLargestDivisor)
@@ -49,6 +55,8 @@ namespace DevEducationOOP.Test
             int actualLargestDivisor = Cycle.FindLargestDivisor(number);
             Assert.AreEqual(expectedLargestDivisor, actualLargestDivisor);
         }
+
+
 
         [TestCase(7, 22, 42)]
         [TestCase(-15, 6, -21)]
@@ -61,6 +69,8 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedSumNumbers, actualSumNumbers);
         }
 
+
+
         [TestCase(0, 1)]
         [TestCase(1, 1)]
         [TestCase(2, 1)]
@@ -71,11 +81,15 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedFibocacciNumber, actualFibocacciNumber);
         }
 
+
+
         [TestCase(-23)]
         public void FindFibonacciNumberTest_WhenSerialNumberEqualZero_ShouldThrowExeption(int serialNumber)
         {
             Assert.Throws<Exception>(() => Cycle.FindFibonacciNumber(serialNumber));
         }
+
+
 
         [TestCase(20, 40, 20)]
         [TestCase(64, -48, 16)]
@@ -86,6 +100,8 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedLargestDivisor, actualLargestDivisor);
         }
 
+
+
         [TestCase(27, 0.02, 3)]
         [TestCase(-64, 0.02, -4)]
         [TestCase(145, 0.02, 5.2532)]
@@ -94,6 +110,8 @@ namespace DevEducationOOP.Test
             double actualRoot = Cycle.FindRootByMethodOfHalfDivision(number, errorRate);
             Assert.AreEqual(expectedRoot, actualRoot, 0.2);
         }
+
+
 
         [TestCase(123456, 3)]
         [TestCase(222222, 0)]
@@ -106,6 +124,8 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedCountOddNumbers, actualCountOddNumbers);
         }
 
+
+
         [TestCase(1234, 4321)]
         [TestCase(1000, 1)]
         [TestCase(-8237, -7328)]
@@ -115,6 +135,8 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedMirrorNumber, actualMirrorNumber);
         }
 
+
+
         [TestCase(40, new int[] {2, 4, 6, 8, 12, 14, 16, 18, 20, 21, 22, 24, 26, 28, 34, 36, 38})]
         [TestCase(20, new int[] {2, 4, 6, 8, 12, 14, 16, 18,})]
         public void FindNumbersWithLargerSumOfEven(int number, int[] expectedNumbers)
@@ -123,12 +145,16 @@ namespace DevEducationOOP.Test
             Assert.AreEqual(expectedNumbers, actualNumbers);  
         }
 
+
+
         [TestCase(0)]
         [TestCase(-34)]
         public void FindNumbersWithLargerSumOfEven_WhenNumberLessThanZero_ShouldThrowExeption(int number)
         {
             Assert.Throws<Exception>(() => Cycle.FindNumbersWithLargerSumOfEven(number));
         }
+
+
 
         [TestCase(2345, 89234, true)]
         [TestCase(2345, 678696, false)]
