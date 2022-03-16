@@ -78,13 +78,21 @@ namespace DevEducationOOP
         /// <returns></returns>
         public static int FindLargestDivisor(int number)
         {
-            number = Math.Abs(number);
-            int largestDivisor = number;
-
-            do
+            if (number == 0)
             {
-                largestDivisor--;
-            } while (number % largestDivisor != 0);
+                throw new Exception("Zero has no divisors");
+            }
+
+            int largestDivisor = 1;
+
+            for (int i = Math.Abs(number / 2); i >= 2; i--)
+            {
+                if (number % i == 0)
+                {
+                    largestDivisor = i;
+                    break;
+                }
+            }
 
             return largestDivisor;
         }

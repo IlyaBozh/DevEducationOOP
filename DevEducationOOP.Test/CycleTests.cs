@@ -50,10 +50,20 @@ namespace DevEducationOOP.Test
 
         [TestCase(60, 30)]
         [TestCase(-124, 62)]
+        [TestCase(23, 1)]
+        [TestCase(-7, 1)]
         public void FindLargestDivisorTest(int number, int expectedLargestDivisor)
         {
             int actualLargestDivisor = Cycle.FindLargestDivisor(number);
             Assert.AreEqual(expectedLargestDivisor, actualLargestDivisor);
+        }
+
+
+
+        [TestCase(0)]
+        public void FindLargestDivisorTest_WhenNumberEqualZero_ShoulReturnExeption(int number)
+        {
+            Assert.Throws<Exception>(() => Cycle.FindLargestDivisor(number));
         }
 
 
