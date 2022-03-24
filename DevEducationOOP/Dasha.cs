@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DevEducationOOP
 {
-    internal class Dasha
+    public class Dasha
     {
+        puublic int age {set; get;}
     }
 }
