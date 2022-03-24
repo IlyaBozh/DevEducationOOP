@@ -8,6 +8,8 @@ namespace DevEducationOOP
 {
     public class Dasha
     {
-        puublic int age {set; get;}
+        public int age {set; get;}
+
+        public string name {set; get;}
     }
 }
